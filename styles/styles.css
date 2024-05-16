@@ -39,8 +39,23 @@ body {
     cursor: pointer;
 }
 
+.violet-button {
+    background-color: #5243F4;
+    color: white;
+}
+
 .button:hover {
     background-color: #EEEEEE;
+}
+
+.button.violet-button:hover {
+    background-color: #3930a1;
+}
+
+.common-title {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    font-size: 60px;
+    line-height: 100%;
 }
 
 .header {
@@ -107,3 +122,68 @@ body {
     right: 0;
     z-index: -1;
 }
+
+.products {
+    padding: 100px 0;
+}
+
+.products-items {
+    margin-top: 110px;
+    display: grid;
+    grid-template-columns: repeat(3, 384px);
+    gap: 90px 24px;
+}
+
+.products-item {
+    background-color: white;
+    color: #5D3427;
+}
+
+.products-item-image {
+    height: 202px;
+    text-align: center;
+}
+
+.products-item-image img {
+    height: 272px;
+    top: -70px;
+    position: relative;
+    max-width: 100%;
+}
+
+.products-item-detail {
+    padding: 24px;
+}
+
+.products-item-title {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.products-item-text {
+    height: 110px;
+    font-size: 14px;
+    line-height: 120%;
+    margin-bottom: 20px;
+}
+
+.products-item-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products-item-price {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    font-size: 24px;
+    color: #5243F4;
+    margin-bottom: 10px;
+}
+
+.products-item-weight {
+    font-size: 12px;
+}
+
+
+
