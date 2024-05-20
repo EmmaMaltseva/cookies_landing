@@ -29,10 +29,41 @@ document.getElementById("change-currency").onclick = function (e) {
     } else if (currentCurrency === "₽") {
         newCurrency = "BYN";
         coefficient = 3;
+    } else if (currentCurrency === 'BYN') {
+        newCurrency = '€';
+        coefficient = 0.9;
+    } else if (currentCurrency === '€') {
+        newCurrency = '¥';
+        coefficient = 6.9;
     }
     e.target.innerText = newCurrency;
 
     for (let i =0; i < prices.length; i++) {
-        prices[i].innerText = ;
+        prices[i].innerText = +(prices[i].getAttribute("data-base-price") * coefficient).toFixed(1) + " " + newCurrency;
+    }
+}
+
+const product = document.getElementById("product")
+const name = document.getElementById("name")
+const phone = document.getElementById("phone")
+document.getElementById("order-action").onclick = function () {
+    let hasError = false;
+
+    [product, name, phone].forEach(item => {
+        if (!item.value) {
+            item.style.borderColor = "red";
+            hasError = true
+        } else {
+            item.style.borderColor = "";
+        }
+    });
+
+    if (!hasError) {
+        [product, name, phone].forEach(item => {
+            item.value = "";
+        });
+        alert("Спасибо за заказ! Мы скоро свяжемся с Вами!")
+    } else {
+        alert("Не все данные формы заполнены")
     }
 }
